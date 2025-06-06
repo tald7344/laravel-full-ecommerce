@@ -109,7 +109,7 @@
         integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
 
 <!--gmaps Js-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCjCGmQ0Uq4exrzdcL6rvxywDDOvfAu6eE"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=google_api_key"></script>
 <script src="{{asset('design/style/js/gmaps.min.js')}}"></script>
 <script src="{{asset('design/style/js/main.js')}}"></script>
 <script src="{{asset('design/style/js/custom.js')}}"></script>

@@ -1,7 +1,7 @@
 @extends('admin.index')
 @section('content')
 @push('js')
-<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places&key=AIzaSyBVyHUnq6KuUwzWK2rTpWQglTQrVxBS9YI'></script>
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false&libraries=places&key=google_api_key'></script>
 <script src="{{asset('/design/adminLte/dist/js/locationpicker.jquery.min.js')}}"></script>
 <?php
 $lat = !empty($shipping->lat) ? $shipping->lat : '-34.397';
