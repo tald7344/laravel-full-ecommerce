@@ -1,0 +1,53 @@
+/*----------------------------------------*/
+/* 1.13 Modal Area
+/*----------------------------------------*/
+.modal-wrapper {
+  display: block !important;
+}
+.modal-wrapper.modal {
+  visibility: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: -9;
+}
+.modal-wrapper.modal.show {
+  visibility: visible;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  z-index: 1051;
+}
+.modal-wrapper .modal-dialog {
+  max-width: 880px;
+}
+.modal-wrapper .close {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  color: #333333;
+  font-size: 30px;
+  font-weight: 400;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  z-index: 99;
+}
+.modal-wrapper .close:hover {
+  color: #a91b1a;
+}
+.modal-wrapper .slider-thumbs-1 {
+  margin-top: 10px;
+  margin-right: -10px;
+}
+.modal-wrapper .slider-thumbs-1 .sm-image {
+  margin-right: 10px;
+}
+
+.modal-wrapper .modal-body .modal-inner-area .message-text,
+.modal-wrapper .modal-body .modal-inner-area .custom-message {
+  font-size: 1rem;
+  letter-spacing: .03rem;
+}

@@ -1,0 +1,1 @@
+<span style="display:block;width:25px;height:25px;background:{{$color}}"></span>

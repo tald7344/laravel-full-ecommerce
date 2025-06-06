@@ -1,0 +1,297 @@
+@import "theme/variables";
+@import "theme/mixins";
+@import "theme/general";
+
+
+.product_image_area,
+.s_product_text h3 {
+  @extend .reset-font-family;
+}
+
+.s_product_text {
+  h3, h2 {
+    @include sm-mobile { font-size: 20px !important; }
+  }
+  .product_count label,
+  .list li {
+    @include sm-mobile { font-size: 13px !important; }
+  }
+}
+
+.page-item.disabled .page-link,
+.page-item.active .page-link,
+.pagination a {
+  line-height: unset;
+}
+
+div.pagination, ul.pagination {
+  border-left: unset;
+}
+
+ul.pagination {
+  margin-top: unset;
+  filter: drop-shadow(0px 2px 2px #999);
+}
+
+.page-item {
+  .page-link {
+    border: none;
+    @include cmq(768px, 991px) {
+      height: 30px;
+      line-height: 15px;
+      font-size: 12px;
+    }
+    @include sm-mobile {
+      height: 25px;
+      line-height: 11px;
+      font-size: 10px;
+    }
+    &:hover {
+      box-shadow: inset 2px 2px 8px $primary-color2;
+      // @include gradient(90deg, #d0cece 0%, #aaa 100%);
+      @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+    }
+  }
+  &.active {
+    .page-link {
+      @include cmq(768px, 991px) {
+        line-height: 15px;
+        font-size: 12px;
+      }
+      @include sm-mobile {
+        height: 25px;
+        line-height: 11px;
+        font-size: 10px;
+      }
+      // box-shadow: inset 2px 2px 8px #999;
+      // @include gradient(90deg, #d0cece 0%, #aaa 100%);
+      box-shadow: inset 2px 2px 8px $primary-color2;
+      @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+      //background-color:  #b4b4b4;
+      border: none;
+    }
+  }
+  &.disabled {
+    .page-link {
+      @include cmq(768px, 991px) {
+        line-height: 15px;
+        font-size: 12px;
+      }
+      @include sm-mobile {
+        height: 25px;
+        line-height: 11px;
+        font-size: 10px;
+      }
+    }
+  }
+}
+
+
+.owl-stage-outer, .owl-stage, .owl-item, .single-prd-item { height: 100% }
+
+.owl-carousel {
+  .owl-item img {
+    object-fit: contain;
+  }
+}
+
+.product-details-image {
+  position: relative;
+  border: 1px solid #eee;
+  .zoom-button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    z-index: 9;
+  }
+  & .zoom-button:hover,
+  & .zoom-button.active {
+    background-color: $primary-color2;
+    color: #fff;
+  }
+}
+
+.single-product {
+  .offer-circle {
+    position: absolute;
+    top: 35px;
+    display: block;
+    width: 35px;
+    height: 35px;
+    font-size: .7rem;
+    @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+    border-radius: 50%;
+    line-height: 36px;
+    text-align: center;
+    color: #fff;
+  }
+}
+.price {
+  .price-offer {
+    font-size: 12px;
+  }
+}
+.wishlist-added {
+  //pointer-events: none !important;
+  i { color: $primary-color3 !important; }
+}
+
+.product-list {
+  .sidebar-filter .top-filter-head,
+  .sidebar-categories .head {
+    @include gradient(180deg, $primary-color2, transparent);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+    color: #fff;
+    @include cmq(1200px, 1375px) {
+      font-size: .8rem;
+    }
+    @include cmq(992px, 1199px) {
+      font-size: .9rem;
+    }
+    @include cmq(768px, 991px) {
+      padding: 0 20px;
+      font-size: 12px;
+    }
+    @include cmq(768px, 780px) {
+      font-size: 11px;
+    }
+    @include cmq(576px, 767px) {
+      font-size: 13px;
+    }
+    @include sm-mobile {
+      font-size: 12px;
+      line-height: 50px;
+    }
+  }
+  .sidebar-filter {
+    .common-filter {
+      .filter-list { font-size: 13px; padding-right: 28px;
+        @include sm-mobile {
+          font-size: 11px;
+        }
+      }
+    }
+  }
+  .sidebar-categories {
+    .main-nav-list {
+      a {
+        font-size : 13px;
+        @extend .reset-font-family;
+        @include sm-mobile {
+          font-size: 11px;
+          line-height: 40px;
+        }
+      }
+    }
+  }
+  .filter-bar {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    @include gradient(180deg, rgba(255, 255, 255, 1), transparent);
+    filter: drop-shadow(2px 4px 11px #ddd);
+    .sorting {
+      & > div {
+        filter: drop-shadow(0px 2px 2px #999);
+        label {
+          background: #fff;
+          border: none;
+          outline: none;
+          box-shadow: unset;
+          @include cmq(768px, 991px) {
+            font-size: 12px;
+          }
+          @include sm-mobile {
+            font-size: 9px;
+          }
+          &:focus { box-shadow: unset; }
+          &:hover, &.focus.active {
+            // box-shadow: inset 2px 2px 8px #999;
+            // @include gradient(90deg, #d0cece 0%, #bcb9b9 100%);
+            box-shadow: inset 2px 2px 8px $primary-color2;
+            @include gradient(90deg, $primary-color 0%, $primary-color2 100%);
+            color: #fff;
+          }
+          &:first-child {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+          }
+          &:last-child {
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+          }
+
+        }
+      }
+    }
+  }
+}
+
+.product-home {
+  .prd-bottom {
+    position: absolute;
+    top: 42%;
+    left: -32px;
+    @include transition(all 0.3s ease 0s);
+    @include gradient(180deg, rgba(255, 255, 255, 1), transparent);
+    padding: 6px;
+    border-top-right-radius: 5px;
+    @media screen and (max-width: 992px) {
+      left: 0 !important;
+      .social-info {
+        color: $primary-color2;
+        &:hover, &:visited {
+          color: $primary-color
+        }
+      }
+    }
+    @include sm-mobile {
+      top: 40%;
+      padding: 2px 5px;
+      li {
+        .social-info {
+          margin-bottom: 0;
+          i { font-size: .9rem; }
+        }
+      }
+    }
+  }
+  @include sm-mobile {
+    .title {
+      h6 { font-size: .6rem; }
+    }
+  }
+  &:hover {
+    .prd-bottom.ltr {
+      left: 0 !important;
+      .social-info {
+        color: $primary-color2;
+        &:hover {
+          color: $primary-color
+        }
+      }
+    }
+  }
+}
+
+.related-products {
+  .gradient-head {
+    h4 {
+      @include cmq(768px , 992px) {
+        font-size: 15px;
+      }
+      @include cmq(576px, 767px) {
+        font-size: 13px;
+      }
+      @include sm-mobile { font-size: 13px; }
+    }
+  }
+  .slick-track {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+

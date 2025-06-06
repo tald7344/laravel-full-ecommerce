@@ -1,0 +1,327 @@
+@import "theme/variables";
+@import "theme/mixins";
+@import "theme/general";
+/*--------------------------------------------------------------
+# User Profile
+--------------------------------------------------------------*/
+
+
+
+.account-container {
+  display: flex;
+  background: #f5f5f5;
+  flex-flow: row wrap;
+  width: 100%;
+  padding-top: 30px;
+  @media screen and (max-width: 768px) { flex-flow: row wrap; }
+  .account-header {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    background: white;
+    padding: 30px 0 20px;
+    width: 100%;
+    @media screen and (min-width: 768px) {
+      width: 100%;
+    }
+    .card-body {
+      padding: 0; overflow-x: auto;
+
+      .account-nav {
+        display: flex;
+        flex-flow: row;
+        position: relative;
+        justify-content: space-evenly;
+        background: white;
+        min-width: 450px;
+        @media(max-width: 575px) { min-width: unset; }
+        .bar {
+          content: "";
+          position: absolute;
+          width: 33.33333333%;
+          height: 4px;
+          background: $primary-color2;
+          bottom: 0;
+          left: 0;
+          transition: all 0.3s ease-in-out;
+        }
+        .account-link {
+          width: 100%;
+          padding: 25px 0;
+          @media(max-width: 575px) { padding: 10px 0; }
+          a {
+            display: flex;
+            flex-flow: row wrap;
+            cursor: pointer;
+            align-items: center;
+            justify-content: center;
+          }
+          i {
+            font-size: 25px;
+            width: 100%;
+            text-align: center;
+            margin-bottom: 15px;
+            @media(max-width: 575px) { font-size: 20px; }
+          }
+          span {
+            font-size: 15px;
+            color: black;
+            @include cmq(576px, 767px) {
+              font-size: 0.7rem;
+            }
+            @media(max-width: 575px) { font-size: 0.6rem; }
+          }
+          &:hover span, &.active span, &:hover i, &.active i {
+            color: $primary-color2;
+          }
+        }
+      }
+
+    }
+  }
+  .card {
+    &.change-password {
+      input[type="submit"] {
+        background: linear-gradient(90deg, $primary-color 0%, $primary-color2 100%);
+        color: #fff;
+        @include cmq(576px, 767px) {
+          font-size: 0.8rem;
+        }
+        @include sm-mobile {
+          font-size: 0.8rem;
+        }
+      }
+    }
+    &.checkout-area {
+      .account-link {
+        background: #eee;
+        &.active {
+          border: 2px solid #eee;
+          background: #fff;
+        }
+      }
+      table {
+        thead {
+          background-color: #f6f6f6;
+          th {
+            vertical-align: middle;
+            font-weight: 400;
+            @include cmq(576px, 767px) {
+              font-size: 0.75rem;
+            }
+            @include sm-mobile {
+              font-size: 0.6rem;
+            }
+          }
+        }
+        tbody td {
+          vertical-align: middle;
+          color: #6f6e6e;
+          @include sm-mobile {
+            font-size: 0.8rem;
+          }
+          &:first-child:not(.cart-product-image) {
+            @include sm-mobile {
+              width: 130px;
+              display: block;
+            }
+          }
+        }
+      }
+
+      .payment-accordion {
+        .card {
+          border: 0;
+          border-radius: 0;
+          background: #f2f2f2;
+          @media(max-width: 575px) { padding: 15px; }
+        }
+        .card-header {
+          padding: 0;
+          margin-bottom: 0;
+          background-color: #f2f2f2;
+          border-bottom: 0;
+        }
+        .card-body {
+          padding: 0;
+          & > p {
+            color: #515151;
+          }
+        }
+        .panel.panel-default {
+          margin-bottom: 20px;
+        }
+        h5.panel-title {
+          color: #444;
+          font-weight: 600;
+          font-size: 18px;
+          cursor: pointer;
+          & > a:hover {
+            color: $primary-color2 !important;
+          }
+        }
+        .order-button-payment .info-edit {
+          display: block;
+          background: #434343 none repeat scroll 0 0;
+          border: medium none;
+          color: #fff;
+          font-size: 17px;
+          font-weight: 600;
+          height: 50px;
+          line-height: 50px;
+          margin: 20px 0 0;
+          padding: 0;
+          text-transform: uppercase;
+          @include transition();
+          @include gradient(10deg, $primary-color2, transparent);
+          width: 100%;
+          //border: 1px solid transparent;
+          cursor: pointer;
+          @include cmq(576px, 767px) {
+            font-size: 0.9rem;
+          }
+          @media(max-width: 575px) {
+            font-size: 11px;
+            height: 45px
+          }
+          &:hover { color: #000; }
+        }
+      }
+    }
+  }
+
+  #account-father {
+    display: flex;
+    flex-flow: column;
+    padding: 20px 20px;
+    @media screen and (min-width: 768px) { width: 100%; }
+    @media(max-width: 575px) { padding: 10px 10px; }
+    .tab-content {
+      .tab-pane {
+        display: block;
+        height: 0;
+        opacity: 0;
+        -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+        visibility: hidden;
+        width: 100%;
+        overflow: hidden;
+        &.active {
+          height: auto;
+          opacity: 1;
+          -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+          visibility: visible;
+        }
+        .form-group label {
+          @include cmq(576px, 767px) {
+            font-size: .8rem;
+          }
+          @include sm-mobile {
+            font-size: .7rem;
+          }
+        }
+
+        .order-scroll, .table-responsive {
+          max-height: 700px;
+          overflow-y: scroll;
+          &::-webkit-scrollbar { width: 5px; }
+          &::-webkit-scrollbar-track { background: #f1f1f1; }
+          &::-webkit-scrollbar-thumb { background: #bebebe; }
+          &::-webkit-scrollbar-thumb:hover { background: #555; }
+        }
+        .your-order-table {
+          table {
+            background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+            border: medium none;
+            width: 100%;
+            thead th { vertical-align: middle; }
+            tr {
+              &.cart_item:hover { background: #f9f9f9; }
+              &.order-total td span {
+                color: #464646;
+                font-size: 20px;
+              }
+            }
+            th {
+              border-top: medium none;
+              font-weight: normal;
+              text-align: center;
+              text-transform: uppercase;
+              vertical-align: middle;
+              white-space: nowrap;
+              width: 250px;
+            }
+            th, td {
+              border-bottom: 1px solid #d8d8d8;
+              border-right: medium none;
+              font-size: 14px;
+              font-family: 'Montserrat', sans-serif;
+              padding: 15px 0;
+              text-align: center;
+              @extend .reset-font-family;
+              @include cmq(576px, 767px) {
+                font-size: 13px;
+              }
+              @include sm-mobile {
+                font-size: 11px;
+              }
+            }
+            .order-total {
+              td { border-bottom: medium none; }
+              th {
+                border-bottom: medium none;
+                font-size: 18px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.edit-profile {
+  h2 {
+    @include cmq(768px, 991px) {
+      font-size: 1.6rem;
+    }
+    @include cmq(576px, 767px) {
+      font-size: 1.3rem;
+    }
+    @include sm-mobile {
+      font-size: 1.1rem !important;
+    }
+  }
+  label {
+    @include cmq(576px, 767px) {
+      font-size: 0.8rem;
+    }
+    @include sm-mobile {
+      font-size: 0.7rem !important;
+    }
+    .custom-file-label {
+      line-height: 2;
+      &:after {
+        @include sm-mobile {
+          line-height: 2;
+        }
+      }
+    }
+  }
+  input {
+    @include cmq(576px, 767px) {
+      font-size: 0.7rem;
+    }
+    @include sm-mobile {
+      font-size: 0.7rem !important;
+    }
+  }
+  input[type="submit"] {
+    background: linear-gradient(90deg, $primary-color 0%, $primary-color2 100%);
+    color: #fff;
+    @include cmq(576px, 767px) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+/*End Profile Page*/

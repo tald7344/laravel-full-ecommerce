@@ -1,0 +1,92 @@
+
+/*----------------------------------------*/
+/* Admin Main Panel
+/*----------------------------------------*/
+
+#full_calendar_events .fc-scroller.fc-day-grid-container::-webkit-scrollbar { width: 5px; }
+#full_calendar_events .fc-scroller.fc-day-grid-container::-webkit-scrollbar-track { background: #f1f1f1; }
+#full_calendar_events .fc-scroller.fc-day-grid-container::-webkit-scrollbar-thumb { background: #bebebe; }
+#full_calendar_events .fc-scroller.fc-day-grid-container::-webkit-scrollbar-thumb:hover { background: #555; }
+
+/*----------------------------------------*/
+/* 1.13 Modal Area
+/*----------------------------------------*/
+.modal-wrapper {
+  display: block !important;
+}
+.modal-wrapper.modal {
+  visibility: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: -9;
+}
+.modal-wrapper.modal.show {
+  visibility: visible;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  z-index: 1051;
+}
+.modal-wrapper .modal-dialog {
+  max-width: 880px;
+}
+.modal-wrapper .close {
+  background-color: transparent;
+  padding: 0;
+  border: 0;
+  color: #333333;
+  font-size: 30px;
+  font-weight: 400;
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  position: absolute;
+  right: 15px;
+  top: 5px;
+  z-index: 99;
+}
+.modal-wrapper .close:hover {
+  color: #a91b1a;
+}
+.modal-wrapper .slider-thumbs-1 {
+  margin-top: 10px;
+  margin-right: -10px;
+}
+.modal-wrapper .slider-thumbs-1 .sm-image {
+  margin-right: 10px;
+}
+
+
+
+/*----------------------------------------*/
+/* Admin Orders Panel
+/*----------------------------------------*/
+.orders-panel .order-scroll {
+    max-height: 500px;
+    overflow-y: scroll;
+}
+.orders-panel .order-scroll::-webkit-scrollbar { width: 5px; }
+.orders-panel .order-scroll::-webkit-scrollbar-track { background: #f1f1f1; }
+.orders-panel .order-scroll::-webkit-scrollbar-thumb { background: #bebebe; }
+.orders-panel .order-scroll::-webkit-scrollbar-thumb:hover { background: #555; }
+
+.todo-title:hover {
+  color: #17a2b8;
+}
+
+
+
+
+.dt-buttons {
+  margin-bottom: 1rem;
+}
+
+.dataTables_filter,
+.dataTables_length {
+  width: 50%;
+  display: inline-block;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 0.5rem;
+}

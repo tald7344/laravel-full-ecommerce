@@ -1,0 +1,21 @@
+
+// including variables and mixins
+@import "theme/variables";
+@import "theme/mixins";
+@import "theme/predefine";
+@import "theme/reset";
+@import "theme/general";
+
+
+// Custom Scss
+@import "theme/model";
+@import "theme/elements";
+@import "theme/header";
+@import "theme/banner";
+@import "theme/home";
+@import "theme/bread-crum";
+@import "theme/common";
+@import "theme/product";
+@import "theme/blog";
+@import "theme/contact";
+@import "theme/footer";

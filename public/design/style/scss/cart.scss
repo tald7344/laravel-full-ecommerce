@@ -1,0 +1,171 @@
+@import "theme/variables";
+@import "theme/mixins";
+@import "theme/general";
+
+.shopping-cart-area {
+  .alert,
+  .btn-dark {
+    @include sm-mobile {
+      font-size: .7rem;
+    }
+  }
+  .table-content {
+    table {
+      th, td { text-align: center;
+        @include sm-mobile {
+          font-size: .7rem !important;
+        }
+      }
+      td {
+        vertical-align: middle;
+        .cart-plus-minus {
+          float: none;
+          margin: 0 auto;
+        }
+        &.product-subtotal {
+          font-size: 16px;
+          font-weight: 700;
+          font-family: $primary-font;
+          color: #414141;
+        }
+        &.li-product-remove:hover button {
+          transition: all .5s ease;
+          color: #555;
+        }
+      }
+    }
+  }
+  .coupon-all { margin-top: 30px; }
+  .coupon { float: left; }
+  .coupon input {
+    background-color: transparent;
+    border: 1px solid #ddd;
+    color: #333;
+    font-size: 13px;
+    border-radius: 0;
+    height: 42px;
+    width: 120px;
+  }
+  .coupon-all input.button {
+    background-color: #333;
+    border: 0 none;
+    border-radius: 2px;
+    color: #fff;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    height: 42px;
+    letter-spacing: 1px;
+    line-height: 42px;
+    padding: 0 25px;
+    text-transform: uppercase;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    width: inherit;
+  }
+  .coupon-all input.button:hover {
+    background: $primary-color2;
+  }
+  .coupon2 {
+    float: right;
+  }
+  .cart-page-total {
+    padding-top: 30px;
+    & > h2 {
+      font-size: 25px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-transform: capitalize;
+    }
+    & > ul {
+      border: 1px solid #ddd;
+    }
+    & > ul > li {
+      list-style: none;
+      font-size: 15px;
+      color: #252525;
+      padding: 10px 30px;
+      border-bottom: 1px solid #ebebeb;
+      font-weight: 700;
+      font-family: $primary-font;
+    }
+    ul > li > span {
+      float: right;
+    }
+    li:last-child {
+      border-bottom: 0;
+    }
+    & > a {
+      background-color: $primary-color2;
+      border-color: $primary-color2;
+      color: #fff;
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      text-transform: capitalize;
+      -webkit-transition: all 0.3s ease 0s;
+      transition: all 0.3s ease 0s;
+      @include sm-mobile {
+       padding: 5px 17px;
+        font-size: .7rem;
+      }
+      &:hover {
+        background: $primary-color;
+        border-color: $primary-color;
+      }
+    }
+
+  }
+}
+
+.cart-plus-minus {
+  float: left;
+  margin-right: 15px;
+  position: relative;
+  width: 76px;
+  text-align: left;
+  border:0;
+  .cart-plus-minus-box {
+    border: 1px solid #e1e1e1;
+    color: #242424;
+    height: 46px;
+    text-align: center;
+    //width: 48px;
+    //width: 48px;
+    width: 3rem;
+    padding: 0;
+    background: #fff;
+  }
+  .dec.qtybutton,
+  .inc.qtybutton {
+    //border-bottom: 1px solid #e1e1e1;
+    //border-right: 1px solid #e1e1e1;
+    //border-top: 1px solid #e1e1e1;
+    //color: #333333;
+    cursor: pointer;
+    height: 23px;
+    line-height: 20px;
+    position: absolute;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+    width: 28px;
+    border: 0;
+    color: #fff;
+    background-color: $primary-color2;
+  }
+  .dec.qtybutton {
+    bottom: 0;
+    right: 0;
+  }
+  .inc.qtybutton {
+    border-bottom: none;
+    top: 0;
+    right: 0;
+  }
+  .dec.qtybutton:hover,
+  .inc.qtybutton:hover {
+    background: #686464;
+  }
+}
